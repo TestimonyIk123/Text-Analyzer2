@@ -69,7 +69,7 @@ $(document).ready(function(){
     myWords = [];
     myResults = [];
     myTexts = passage.split(" ");
-    myText.forEach(function(element){
+    myTexts.forEach(function(element){
       wordCount = numberOfOccurrencesInText(element,passage);
       myWords.push(element)
       myResults.push(wordCount);
