@@ -68,11 +68,11 @@ $(document).ready(function(){
     $("#bolded-passage").html(boldPassage(word, passage));
     myWords = [];
     myResults = [];
-    myTexts = text.split(" ");
+    myTexts = passage.split(" ");
     myText.forEach(function(element){
-      wordCount = numberOfOccurrencesInText(element,text);
+      wordCount = numberOfOccurrencesInText(element,passage);
       myWords.push(element)
-      myResults.push(wordCount)
+      myResults.push(wordCount);
     })
     myWords.forEach(function(element,index){
     $("#myUL").append("<li>" + element + " " + myResults[index] + "</li>");
