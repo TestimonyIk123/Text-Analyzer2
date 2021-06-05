@@ -58,12 +58,24 @@ function boldPassage(word, text) {
 $(document).ready(function(){
   $("form#word-counter").submit(function(event){
     event.preventDefault();
-    const passage = $("#text-passage").val();
-    const word = $("#word").val();
-    const wordCount = wordCounter(passage);
-    const occurrencesOfWord = numberOfOccurrencesInText(word, passage);  
+    const passage = $("#text-passage").val().replace("zooinks","").replace("muppeteer","").replace("biffaroni","").replace("loopdaloop","");
+    $("#text-passage").val(passage);
+    let word = $("#word").val();
+    let wordCount = wordCounter(passage);
+    let occurrencesOfWord = numberOfOccurrencesInText(word, passage);  
     $("#total-count").html(wordCount);
     $("#selected-count").html(occurrencesOfWord);
     $("#bolded-passage").html(boldPassage(word, passage));
+    myWords = [];
+    myResults = [];
+    myTexts = text.split(" ");
+    myText.forEach(function(element){
+      wordCount = numberOfOccurrencesInText(element,text);
+      myWords.push(element)
+      myResults.push(wordCount)
+    })
+    myWords.forEach(function(element,index){
+    $("#myUl").append("<li>" + element + " " + myResults[index] + "</li>");
+    })
   });
 });
