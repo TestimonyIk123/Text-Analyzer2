@@ -75,7 +75,7 @@ $(document).ready(function(){
       myResults.push(wordCount)
     })
     myWords.forEach(function(element,index){
-    $("#myUl").append("<li>" + element + " " + myResults[index] + "</li>");
+    $("#myUL").append("<li>" + element + " " + myResults[index] + "</li>");
     })
   });
 });
